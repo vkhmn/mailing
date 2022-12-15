@@ -1,0 +1,7 @@
+.idea/
+__pycache__/
+.env
+local.env
+dump.rdb
+db.sqlite3
+TODO
