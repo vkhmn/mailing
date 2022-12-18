@@ -10,6 +10,7 @@ redis = "*"
 django-debug-toolbar = "*"
 aiohttp = "*"
 requests = "*"
+djangorestframework = "*"
 
 [dev-packages]
 

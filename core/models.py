@@ -102,6 +102,12 @@ class Client(models.Model):
     def __str__(self):
         return f'{self.phone}'
 
+    def get_phone(self):
+        return self.phone
+
+    def get_code(self):
+        return self.code.value
+
 
 class Status(models.TextChoices):
     """ Статус отправки."""

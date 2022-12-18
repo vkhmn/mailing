@@ -72,6 +72,7 @@ class GetMailingStatus:
         current_date = datetime.now(tz=timezone.get_current_timezone())
         if current_date >= mailing.time_end:
             return TaskStatus.ENDED
+
         if current_date < mailing.time_start:
             return TaskStatus.WAITING
 
