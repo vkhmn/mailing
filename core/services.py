@@ -94,3 +94,13 @@ class SendMessage:
             "Authorization": f"Bearer {API_KEY}",
         }
         return requests.post(url, json=data, headers=headers,).status_code
+
+
+class ActiveMailing:
+    @classmethod
+    def execute(cls) -> list[int]:
+        all_mailings = Mailing.objects.values_list('pk', flat=True)
+        mailings_status = [
+            (pk, GetMailingStatus.execute(mailing_id=pk)) for pk in all_mailings]
+        return [
+            pk for pk, status in mailings_status if status == status.STARTED]

@@ -68,6 +68,9 @@ class Mailing(models.Model):
         'Дата и время окончания рассылки',
     )
 
+    def __str__(self):
+        return f'{self.message_text}'
+
 
 class Client(models.Model):
     """
